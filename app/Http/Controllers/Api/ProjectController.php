@@ -17,7 +17,7 @@ class ProjectController extends Controller
             "results" => $projects //risultati
         ]);
     }
-    //Single Project
+    //Show
     public function show($slug) {
         $project = Project::with("type:id,name", "technologies:id,name")->where("slug", $slug)->get(); //prendo il singol progetto dal database tramite lo slug
         //Restituisco il JSON
